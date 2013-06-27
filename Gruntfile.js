@@ -6,12 +6,40 @@ module.exports = function (grunt) {
 
 		files: {
 			source: './source',
-			css: '<%= files.source %>/css',
+			build: './build',
+			css: '<%= files.source %>/css/**/*.css',
 			js: [
-				"Gruntfile.js",
-				"<%= files.source %>/js/simple/**/*.js",
-				"<%= files.source %>/js/advanced/**/*.js"
+				'Gruntfile.js',
+				'<%= files.source %>/js/simple/**/*.js',
+				'<%= files.source %>/js/advanced/**/*.js'
 			]
+		},
+
+		clean: {
+			build: '<%= files.build %>'
+		},
+
+		concat: {
+			options: {
+				stripBanners: true,
+				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+				'<%= grunt.template.today("yyyy-mm-dd") %> */'
+			},
+			js: {
+				src: ['<%= files.source %>/js/simple/**/*.js','<%= files.source %>/js/advanced/**/*.js'],
+				dest: '<%= files.build %>/all.js'
+			},
+			css: {
+				src: '<%= files.css %>',
+				dest: '<%= files.build %>/all.css'
+			}
+		},
+
+		cssmin: {
+			release: {
+				src: ['<%= files.build %>/all.css'],
+				dest: '<%= files.build %>/all.min.css'
+			}
 		},
 
 		jshint: {
@@ -29,10 +57,25 @@ module.exports = function (grunt) {
 					'<%= files.js %>'
 				]
 			}
+		},
+
+		uglify: {
+			release: {
+				options: {
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+							'<%= grunt.template.today("yyyy-mm-dd") %> */'
+				},
+				src: ['<%= files.build %>/all.js'],
+				dest: '<%= files.build %>/all.min.js'
+			}
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
 	grunt.registerTask('default', ['jshint']);
 	
