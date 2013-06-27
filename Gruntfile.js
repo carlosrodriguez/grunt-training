@@ -83,7 +83,24 @@ module.exports = function (grunt) {
 				],
 				tasks: 'js'
 			}
+		},
+
+		awesomeo: {
+			files: [
+				{
+					src: ['<%= files.source %>/**/*']
+				}
+			]
 		}
+
+	});
+
+	grunt.registerMultiTask("awesomeo", "This task is super awesome", function () {
+
+		var done = this.async(),
+			files = grunt.file.expand(this.data[0].src[0]);
+
+		console.log(files);
 
 	});
 
