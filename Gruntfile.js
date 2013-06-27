@@ -9,8 +9,8 @@ module.exports = function (grunt) {
 			css: '<%= files.source %>/css',
 			js: [
 				"Gruntfile.js",
-				"<%= files.source %>/simple/**/*.js",
-				"<%= files.source %>/advanced/**/*.js"
+				"<%= files.source %>/js/simple/**/*.js",
+				"<%= files.source %>/js/advanced/**/*.js"
 			]
 		},
 
