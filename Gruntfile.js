@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 			options: {
 				stripBanners: true,
 				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-				'<%= grunt.template.today("yyyy-mm-dd") %> */'
+				'<%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			js: {
 				src: ['<%= files.source %>/js/simple/**/*.js','<%= files.source %>/js/advanced/**/*.js'],
