@@ -110,7 +110,9 @@ module.exports = function (grunt) {
 				fs.readFile(file, 'utf8', function (error, data) {
 					if (error) {
 						grunt.fail.fatal("Can't read file: " + file);
-						if(error) throw error;
+						if(error){
+							throw error;
+						}
 					}
 
 					var check = data.match('<<<<<<< HEAD');
@@ -118,7 +120,9 @@ module.exports = function (grunt) {
 					if(check) {
 						grunt.log.error(check);
 						grunt.fail.fatal("Error found on file: " + file);
-						if(error) throw error;
+						if(error){ 
+							throw error;
+						}
 					}
 
 					isItDone();
