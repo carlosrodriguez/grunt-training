@@ -69,6 +69,7 @@ module.exports = function (grunt) {
 				dest: '<%= files.build %>/all.min.js'
 			}
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -76,6 +77,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+
+	grunt.registerTask('css', ['concat:css','cssmin']);
+	grunt.registerTask('js', ['jshint','concat:js','uglify']);
 	
 	grunt.registerTask('default', ['jshint']);
 	
