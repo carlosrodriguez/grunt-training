@@ -1,0 +1,15 @@
+/*
+* File name:   style.css
+* Description: Sets some ugly basic styles
+* Version:     1.0
+*/
+
+.ui-text-title {
+	font-size: 12px;
+	color: red;
+}
+.ui-text-title-header {
+	font-size: 20px;
+	font-weight: bold;
+	color: blue;
+}

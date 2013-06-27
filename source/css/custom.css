@@ -1,0 +1,15 @@
+/*
+* File name:   custom.css
+* Description: Sets some ugly custom styles
+* Version:     1.0
+*/
+
+.ui-custom-title {
+	font-size: 13px;
+	color: green;
+}
+.ui-custom-title-header {
+	font-size: 36px;
+	font-weight: bold;
+	color: yellow;
+}
