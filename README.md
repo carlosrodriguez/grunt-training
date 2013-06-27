@@ -7,7 +7,7 @@ A simple walthrough through the setup of a Gruntfile.js
 [Grunt](http://gruntjs.com/) is a [node.js](http://nodejs.org/) package and command line tool that allows for the automation of several day to day Front End tasks.
 
 ##What can I use it for?
-You can use grunt to automate pretty much all of the tedious repetitive tasks of Front End development. The Grunt ecosystem is huge and there are several plugins covering a vast array of tasks. You can also create your custom tasks sicne all you would need to know is JavaScript and some node.js
+You can use grunt to automate pretty much all of the tedious repetitive tasks of Front End development. [The Grunt ecosystem](http://gruntjs.com/plugins) is huge and there are several plugins covering a vast array of tasks. You can also create your custom tasks sicne all you would need to know is JavaScript and some node.js
 
 ##How can I use it?
 1. Install [node.js](http://nodejs.org/)
