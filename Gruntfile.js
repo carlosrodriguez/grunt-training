@@ -8,10 +8,29 @@ module.exports = function (grunt) {
 			source: './source',
 			css: '<%= files.source %>/css',
 			js: [
+				"Gruntfile.js",
 				"<%= files.source %>/simple/**/*.js",
 				"<%= files.source %>/advanced/**/*.js"
 			]
+		},
+
+		jshint: {
+			options: {
+				"curly": true,
+				"eqnull": true,
+				"eqeqeq": true,
+				"undef": false,
+				"globals": {
+					"jQuery": true
+				}
+			},
+			files: {
+				src: [
+					'<%= files.js %>'
+				]
+			}
 		}
+
 	});
 	
 	grunt.registerTask('default', []);
