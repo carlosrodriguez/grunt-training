@@ -1,4 +1,7 @@
 {
-	"name": "gruntfile",
-	"version": "0.0.1"
+  "name": "gruntfile",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt-cli": "~0.1.9"
+  }
 }
