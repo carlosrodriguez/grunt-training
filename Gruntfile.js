@@ -97,10 +97,48 @@ module.exports = function (grunt) {
 
 	grunt.registerMultiTask("awesomeo", "This task is super awesome", function () {
 
-		var done = this.async(),
-			files = grunt.file.expand(this.data[0].src[0]);
+		var fs = require('fs'),
+			done = this.async(),
+			files = grunt.file.expand(this.data[0].src[0]),
+			total = files.length - 1;
+			counter = 0;
 
-		console.log(files);
+		function checkFile (file) {
+			var stats = fs.statSync(file);
+
+			if(stats.isFile()) {
+				fs.readFile(file, 'utf8', function (error, data) {
+					if (error) {
+						grunt.fail.fatal("Can't read file: " + file);
+						if(error) throw error;
+					}
+
+					var check = data.match('<<<<<<< HEAD');
+
+					if(check) {
+						grunt.log.error(check);
+						grunt.fail.fatal("Error found on file: " + file);
+						if(error) throw error;
+					}
+
+					isItDone();
+
+				});
+			} else {
+				isItDone();
+			}
+		}
+
+		function isItDone () {
+			if (counter >= total) {
+				done(true);
+			} else {
+				counter++;
+				checkFile(files[counter]);
+			}
+		}
+
+		checkFile(files[counter]);
 
 	});
 
