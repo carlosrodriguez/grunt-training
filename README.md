@@ -3,7 +3,18 @@ grunt-training
 
 A simple walthrough through the setup of a Gruntfile.js
 
-###Steps
+##What is Grunt?
+[Grunt](http://gruntjs.com/) is a [node.js](http://nodejs.org/) package and command line tool that allows for the automation of several day to day Front End tasks.
+
+##What can I use it for?
+You can use grunt to automate pretty much all of the tedious repetitive tasks of Front End development. The Grunt ecosystem is huge and there are several plugins covering a vast array of tasks. You can also create your custom tasks sicne all you would need to know is JavaScript and some node.js
+
+##How can I use it?
+1. Install [node.js](http://nodejs.org/)
+2. Instrall [grunt.js](http://gruntjs.com/getting-started)
+3. Create a Gruntfile.js
+
+###Steps for creating a Gruntfile.js
 1. [Create the Gruntfile.js](https://github.com/carlosrodriguez/grunt-training/commit/95c43b399fbae46af4451c6b00194e9de24c87f4)
 2. [Set a package.json file](https://github.com/carlosrodriguez/grunt-training/commit/416e71a91874789d050729ddb11f5eb51cee19d8)
 3. [Add grunt modules](https://github.com/carlosrodriguez/grunt-training/commit/37cb57b3351560f11e1d27c76d6c178ec99ea4d3)
