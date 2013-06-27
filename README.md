@@ -3,7 +3,7 @@ grunt-training
 
 A simple walthrough through the setup of a Gruntfile.js
 
-*** Steps
+###Steps
 1. [Create the Gruntfile.js](https://github.com/carlosrodriguez/grunt-training/commit/95c43b399fbae46af4451c6b00194e9de24c87f4)
 2. [Set a package.json file](https://github.com/carlosrodriguez/grunt-training/commit/416e71a91874789d050729ddb11f5eb51cee19d8)
 3. [Add grunt modules](https://github.com/carlosrodriguez/grunt-training/commit/37cb57b3351560f11e1d27c76d6c178ec99ea4d3)
